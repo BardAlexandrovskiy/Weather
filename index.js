@@ -10,12 +10,12 @@ const weather = new Weather();
 function changeСity() {
   dom.showPreloader();
   weather.getWeather(dom.changeСity())
-    .then(weatherInfo => {
+    .then((weatherInfo) => {
       dom.hidePreloader();
       dom.setInfoWeather(weatherInfo);
     })
-    .catch(error => {
-      alert(error)
+    .catch((error) => {
+      alert(error);
       dom.hidePreloader();
     });
 }
@@ -25,12 +25,12 @@ locationApi
   .getMyIp()
   .then(ip => locationApi.getMyLocation(ip))
   .then(city => weather.getWeather(city))
-  .then(weatherInfo => {
+  .then((weatherInfo) => {
     dom.hidePreloader();
     dom.setInfoWeather(weatherInfo);
   })
-  .catch(error => {
-    alert(error)
+  .catch((error) => {
+    alert(error);
     dom.hidePreloader();
   });
 
