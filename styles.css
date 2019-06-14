@@ -32,7 +32,6 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
-
 }
 
 .loading .text {
@@ -61,11 +60,6 @@ body {
 .title .city {
   font-size: 29px;
   color: white;
-}
-
-.title .date {
-  color: white;
-  font-size: 20px;
 }
 
 .title .weather_status {
@@ -102,7 +96,7 @@ body {
   text-align: center;
 }
 
-.find_city .input{
+.find_city .input {
   width: 30%;
   vertical-align: middle;
   height: 33px;

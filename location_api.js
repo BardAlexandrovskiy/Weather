@@ -2,7 +2,7 @@
 export default class LocationApi {
   getMyIp() {
     return fetch('https://api.ipify.org?format=json')
-      .then((response) => {
+      .then(response => {
         if (response.status === 200) {
           return response.json();
         }
@@ -13,7 +13,7 @@ export default class LocationApi {
 
   getMyLocation(ip) {
     return fetch(`https://ipapi.co/${ip}/json/`)
-      .then((response) => {
+      .then(response => {
         if (response.status === 200) {
           return response.json();
         }
