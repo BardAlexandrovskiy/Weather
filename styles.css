@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
+@import url('https://fonts.googleapis.com/css?family=Modak');
+
+/* font-family: 'Modak', cursive; */
+/* font-family: 'Roboto Condensed', sans-serif; */
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  outline: none;
+  font-size: 0;
+  font-family: 'Roboto Condensed', sans-serif;
+  border: none;
+}
+
+body {
+  background-color: lightblue;
+}
+
+.root {
+  min-width: 320px;
+  padding: 20px 0 10px;
+}
+
+.loading {
+  display: none;
+  position: absolute;
+  background-color: lightblue;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+}
+
+.loading .text {
+  color: white;
+  font-size: 30px;
+  text-shadow: 1px 1px 2px black;
+  position: absolute;
+  top: calc(50% - 18px);
+  left: calc(50% - 56.5px);
+}
+
+.title,
+.description {
+  margin: 0 auto;
+  width: 95%;
+  background-color: lightseagreen;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.title {
+  margin-bottom: 20px;
+  padding: 50px;
+}
+
+.title .city {
+  font-size: 29px;
+  color: white;
+}
+
+.title .date {
+  color: white;
+  font-size: 20px;
+}
+
+.title .weather_status {
+  font-size: 20px;
+  color: white;
+}
+
+.title .temp {
+  font-size: 60px;
+  color: white;
+}
+
+.description {
+  padding: 30px;
+  display: table;
+  border-collapse: separate;
+  border-spacing: 10px;
+}
+
+.description .text {
+  display: table-cell;
+  vertical-align: middle;
+  color: black;
+  font-size: 20px;
+  background-color: white;
+  border-radius: 5px;
+  padding: 50px;
+}
+
+.find_city {
+  width: 95%;
+  margin: 0 auto;
+  margin-top: 55px;
+  text-align: center;
+}
+
+.find_city .input{
+  width: 30%;
+  vertical-align: middle;
+  height: 33px;
+  font-size: 20px;
+  border-radius: 5px;
+  margin-right: 2px;
+  padding: 0 5px;
+}
+
+.find_city .input:focus {
+  border: 1px solid black;
+}
+
+.find_city .button {
+  font-size: 20px;
+  vertical-align: middle;
+  padding: 5px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: lightslategrey;
+  transition: transform 0.1s;
+}
+
+.find_city .button:active {
+  transform: scale(1.1);
+}
+
+@media (max-width: 736px) {
+  .root {
+    padding-top: 10px;
+  }
+
+  .title {
+    margin-bottom: 10px;
+  }
+
+  .description {
+    padding: 5px;
+  }
+
+  .description .text {
+    padding: 5px;
+  }
+
+  .find_city .input {
+    width: 80%;
+    margin-bottom: 3px;
+  }
+}
