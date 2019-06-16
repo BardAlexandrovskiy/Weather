@@ -13,7 +13,10 @@ function getWeatherByCity(city) {
     .then(weatherInfo => {
       dom.setInfoWeather(weatherInfo);
     })
-    .catch(alert)
+    .catch((status) => {
+      dom.errorInfoTextDiv.innerText = status;
+      dom.showErrorInfo();
+    })
     .finally(() => dom.hidePreloader());
 }
 
@@ -34,3 +37,4 @@ dom.findCityInput.addEventListener('keydown', key => {
 });
 
 dom.findCityButton.addEventListener('click', () => getWeatherByCity());
+dom.errorInfoOkButton.addEventListener('click', () => dom.hideErrorInfo());
