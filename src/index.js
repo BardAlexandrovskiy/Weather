@@ -6,38 +6,31 @@ const locationApi = new LocationApi();
 const dom = new Dom();
 const weather = new Weather();
 
-function changeСity() {
+function getWeatherByCity(city) {
   dom.showPreloader();
   weather
-    .getWeather(dom.changeСity())
+    .getWeather(city || dom.getCityValueFromInput())
     .then(weatherInfo => {
-      dom.hidePreloader();
       dom.setInfoWeather(weatherInfo);
     })
-    .catch(error => {
-      alert(error);
-      dom.hidePreloader();
-    });
+    .catch(alert)
+    .finally(() => dom.hidePreloader());
 }
 
-dom.showPreloader();
-locationApi
-  .getMyIp()
-  .then(ip => locationApi.getMyLocation(ip))
-  .then(city => weather.getWeather(city))
-  .then(weatherInfo => {
-    dom.hidePreloader();
-    dom.setInfoWeather(weatherInfo);
-  })
-  .catch(error => {
-    alert(error);
-    dom.hidePreloader();
-  });
+function appStart() {
+  dom.showPreloader();
+  locationApi
+    .getMyIp()
+    .then(ip => locationApi.getMyLocation(ip))
+    .then(city => getWeatherByCity(city));
+}
 
-dom.findCityInput.addEventListener('keydown', e => {
-  if (e.keyCode === 13) {
-    changeСity();
+appStart();
+
+dom.findCityInput.addEventListener('keydown', key => {
+  if (key.keyCode === 13) {
+    getWeatherByCity();
   }
 });
 
-dom.findCityButton.addEventListener('click', () => changeСity());
+dom.findCityButton.addEventListener('click', () => getWeatherByCity());

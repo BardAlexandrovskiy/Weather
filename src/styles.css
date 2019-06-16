@@ -5,18 +5,20 @@
 /* font-family: 'Roboto Condensed', sans-serif; */
 
 * {
+  -webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
   box-sizing: border-box;
   padding: 0;
   margin: 0;
   text-decoration: none;
   outline: none;
-  font-size: 0;
   font-family: 'Roboto Condensed', sans-serif;
   border: none;
 }
 
 body {
   background-color: lightblue;
+  font-size: 0;
 }
 
 .root {
@@ -49,12 +51,12 @@ body {
   width: 95%;
   background-color: lightseagreen;
   border-radius: 5px;
-  text-align: center;
 }
 
 .title {
   margin-bottom: 20px;
   padding: 50px;
+  text-align: center;
 }
 
 .title .city {
@@ -73,20 +75,29 @@ body {
 }
 
 .description {
-  padding: 30px;
-  display: table;
-  border-collapse: separate;
-  border-spacing: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  min-height: 150px;
+  padding: 25px;
 }
 
 .description .text {
-  display: table-cell;
-  vertical-align: middle;
   color: black;
   font-size: 20px;
   background-color: white;
   border-radius: 5px;
-  padding: 50px;
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 5px;
+}
+
+.description .cloudiness,
+.description .wind {
+  margin-right: 3%;
 }
 
 .find_city {
@@ -108,6 +119,7 @@ body {
 
 .find_city .input:focus {
   border: 1px solid black;
+  
 }
 
 .find_city .button {
@@ -118,10 +130,14 @@ body {
   cursor: pointer;
   background-color: lightslategrey;
   transition: transform 0.1s;
+  -webkit-transition: transform 0.1s;
+	-o-transition: transform 0.1s;
 }
 
 .find_city .button:active {
   transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
 }
 
 @media (max-width: 736px) {
@@ -135,10 +151,16 @@ body {
 
   .description {
     padding: 5px;
+    min-height: 80px;
   }
 
   .description .text {
-    padding: 5px;
+    padding: 2px;
+  }
+
+  .description .cloudiness,
+  .description .wind {
+    margin-right: 2%;
   }
 
   .find_city .input {

@@ -8,7 +8,7 @@ export default class LocationApi {
         }
         throw new Error(response.status);
       })
-      .then(receivedIp => receivedIp.ip);
+      .then(objIp => objIp.ip);
   }
 
   getMyLocation(ip) {

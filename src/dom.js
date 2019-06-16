@@ -1,34 +1,34 @@
 export default class Dom {
   constructor() {
-    this.loading = document.querySelector('#loading').style;
-    this.city = document.querySelector('#city');
-    this.cloudiness = document.querySelector('#cloudiness');
-    this.weatherStatus = document.querySelector('#weather_status');
-    this.temp = document.querySelector('#temp');
-    this.humidity = document.querySelector('#humidity');
-    this.wind = document.querySelector('#wind');
+    this.loadingDivStyle = document.querySelector('#loading').style;
+    this.cityDiv = document.querySelector('#city');
+    this.cloudinessDiv = document.querySelector('#cloudiness');
+    this.weatherStatusDiv = document.querySelector('#weather_status');
+    this.tempDiv = document.querySelector('#temp');
+    this.humidityDiv = document.querySelector('#humidity');
+    this.windDiv = document.querySelector('#wind');
     this.findCityButton = document.querySelector('#find_city_button');
     this.findCityInput = document.querySelector('#find_city_input');
   }
 
   showPreloader() {
-    this.loading.display = 'block';
+    this.loadingDivStyle.display = 'block';
   }
 
   hidePreloader() {
-    this.loading.display = 'none';
+    this.loadingDivStyle.display = 'none';
   }
 
   setInfoWeather(obj) {
-    this.city.innerText = obj.city;
-    this.cloudiness.innerText = `cloudiness: ${obj.cloudiness}%`;
-    this.weatherStatus.innerText = obj.weatherStatus;
-    this.temp.innerText = `${obj.temp}°C`;
-    this.humidity.innerText = `humidity: ${obj.humidity}%`;
-    this.wind.innerText = `wind speed: ${obj.wind} m/s`;
+    this.cityDiv.innerText = obj.city;
+    this.cloudinessDiv.innerText = `cloudiness: ${obj.cloudiness}%`;
+    this.weatherStatusDiv.innerText = obj.weatherStatus;
+    this.tempDiv.innerText = `${obj.temp}°C`;
+    this.humidityDiv.innerText = `humidity: ${obj.humidity}%`;
+    this.windDiv.innerText = `wind speed: ${obj.wind} m/s`;
   }
 
-  changeСity() {
+  getCityValueFromInput() {
     return this.findCityInput.value;
   }
 }
