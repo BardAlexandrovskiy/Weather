@@ -23,7 +23,7 @@ body {
 
 .root {
   min-width: 320px;
-  padding: 20px 0 10px;
+  padding: 20px 0;
 }
 
 .loading {
@@ -55,31 +55,39 @@ body {
 
 .title {
   margin-bottom: 20px;
-  padding: 50px;
+  padding: 30px;
   text-align: center;
+}
+
+.title .logo {
+  font-size: 40px;
+  text-align: center;
+  width: 95%;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.title .text {
+  color: white;
 }
 
 .title .city {
   font-size: 29px;
-  color: white;
 }
 
 .title .weather_status {
   font-size: 20px;
-  color: white;
 }
 
 .title .temp {
   font-size: 60px;
-  color: white;
 }
 
 .description {
   display: flex;
-  justify-content: center;
-  align-items: stretch;
-  min-height: 150px;
   padding: 25px;
+  flex-wrap: wrap;
 }
 
 .description .text {
@@ -87,7 +95,6 @@ body {
   font-size: 20px;
   background-color: white;
   border-radius: 5px;
-  flex-grow: 1;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -96,14 +103,25 @@ body {
 }
 
 .description .cloudiness,
+.description .humidity {
+  width: 49.5%;
+  margin-bottom: 10px;
+  min-height: 100px;
+}
+
+.description .cloudiness {
+  margin-right: 1%;
+}
+
 .description .wind {
-  margin-right: 3%;
+  width: 100%;
+  min-height: 70px;
 }
 
 .find_city {
   width: 95%;
   margin: 0 auto;
-  margin-top: 55px;
+  margin-top: 20px;
   text-align: center;
 }
 
@@ -113,8 +131,9 @@ body {
   height: 33px;
   font-size: 20px;
   border-radius: 5px;
-  margin-right: 2px;
+  margin-right: 5px;
   padding: 0 5px;
+  text-align: center;
 }
 
 .find_city .input:focus {
@@ -142,7 +161,7 @@ body {
 
 @media (max-width: 736px) {
   .root {
-    padding-top: 10px;
+    padding:  10px 0;
   }
 
   .title {
@@ -151,7 +170,6 @@ body {
 
   .description {
     padding: 5px;
-    min-height: 80px;
   }
 
   .description .text {
@@ -159,12 +177,22 @@ body {
   }
 
   .description .cloudiness,
-  .description .wind {
+  .description .humidity {
+    margin-bottom: 5px;
+    width: 49%;
+  }
+
+  .description .cloudiness {
     margin-right: 2%;
   }
 
+  .find_city {
+    margin-top: 10px;
+  }
+
   .find_city .input {
-    width: 80%;
-    margin-bottom: 3px;
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 5px;
   }
 }
