@@ -21,7 +21,7 @@ body {
 
 .root {
   min-width: 320px;
-  padding: 20px 0;
+  padding: 10px 0;
 }
 
 .preloader,
@@ -36,12 +36,11 @@ body {
 
 .error_info {
   background-color: transparent;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.alert_container {
+.error_info .alert_container {
   background-color: rgb(206, 103, 103);
   width: 50%;
   padding: 30px;
@@ -50,7 +49,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 
 .error_info .text {
@@ -161,18 +160,21 @@ body {
 
 .find_city .input {
   width: 30%;
-  vertical-align: middle;
   height: 33px;
   font-size: 20px;
   border-radius: 5px;
-  margin-right: 5px;
   padding: 0 5px;
   text-align: center;
+  margin-right: 5px;
+  vertical-align: middle;
 }
 
 .find_city .input:focus {
   border: 1px solid black;
-  
+}
+
+.find_city .empty_input:focus {
+  border-color: red;
 }
 
 .find_city .button {
@@ -195,10 +197,10 @@ body {
 
 @media (max-width: 736px) {
   .root {
-    padding:  10px 0;
+    padding:  5px 0;
   }
 
-  .alert_container {
+  .error_info .alert_container {
     width: 80%;
     min-height: 200px;
   }

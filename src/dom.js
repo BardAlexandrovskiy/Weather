@@ -1,7 +1,7 @@
 export default class Dom {
   constructor() {
-    this.preloaderDivStyle = document.querySelector('#preloader').style;
-    this.errorInfoParentDivStyle = document.querySelector('#error_info').style;
+    this.preloaderDiv = document.querySelector('#preloader');
+    this.errorInfoParentDiv = document.querySelector('#error_info');
     this.errorInfoTextDiv = document.querySelector('#error_info_text');
     this.errorInfoOkButton = document.querySelector('#error_info_ok_button');
     this.cityDiv = document.querySelector('#city');
@@ -15,19 +15,21 @@ export default class Dom {
   }
 
   showPreloader() {
-    this.preloaderDivStyle.display = 'flex';
+    this.preloaderDiv.style.display = 'flex';
   }
 
   hidePreloader() {
-    this.preloaderDivStyle.display = 'none';
+    this.preloaderDiv.style.display = 'none';
   }
 
   showErrorInfo() {
-    this.errorInfoParentDivStyle.display = 'flex';
+    this.findCityInput.blur();
+    this.errorInfoParentDiv.style.display = 'flex';
   }
 
   hideErrorInfo() {
-    this.errorInfoParentDivStyle.display = 'none';
+    this.errorInfoParentDiv.style.display = 'none';
+    this.findCityInput.focus();
   }
 
   setInfoWeather(obj) {
@@ -41,5 +43,11 @@ export default class Dom {
 
   getCityValueFromInput() {
     return this.findCityInput.value;
+  }
+
+  emptyInput() {
+    this.findCityInput.setAttribute('class', 'input empty_input');
+    this.findCityInput.focus();
+    setTimeout(() => { this.findCityInput.setAttribute('class', 'input') }, 2000);
   }
 }
