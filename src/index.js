@@ -9,10 +9,6 @@ const weather = new Weather();
 function getWeatherByCity(city) {
   if (!city) {
     dom.showPreloader();
-<<<<<<< HEAD
-=======
-    dom.findCityInput.blur();
->>>>>>> 28f7d2ed960c7c95ddd6d7e028d263e8bb22fe49
   }
   weather
     .getWeather(city || dom.getCityValueFromInput())
