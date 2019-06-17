@@ -54,4 +54,5 @@ window.addEventListener('keydown', key => {
 });
 
 dom.findCityButton.addEventListener('click', findNewCity);
+
 dom.errorInfoOkButton.addEventListener('click', () => dom.hideErrorInfo());
