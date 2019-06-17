@@ -5,8 +5,6 @@
 /* font-family: 'Roboto Condensed', sans-serif; */
 
 * {
-  -webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
   box-sizing: border-box;
   padding: 0;
   margin: 0;
@@ -26,23 +24,59 @@ body {
   padding: 20px 0;
 }
 
-.loading {
-  display: none;
+.preloader,
+.error_info {
   position: absolute;
-  background-color: lightblue;
   top: 0;
-  bottom: 0;
   left: 0;
   right: 0;
+  bottom: 0;
+  display: none;
 }
 
-.loading .text {
+.error_info {
+  background-color: transparent;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.alert_container {
+  background-color: rgb(206, 103, 103);
+  width: 50%;
+  padding: 30px;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.error_info .text {
+  color: white;
+  font-size: 20px;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+.error_info .button {
+  margin-top: 10px;
+  padding: 10px 30px;
+  border-radius: 5px;
+  font-size: 20px;
+  background-color: rgba(66, 89, 101, 0.9);
+  color: rgb(255, 255, 255, 0.8);
+}
+
+.preloader {
+  background-color: lightblue;
   color: white;
   font-size: 30px;
   text-shadow: 1px 1px 2px black;
-  position: absolute;
-  top: calc(50% - 18px);
-  left: calc(50% - 56.5px);
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
 }
 
 .title,
@@ -148,20 +182,25 @@ body {
   border-radius: 5px;
   cursor: pointer;
   background-color: lightslategrey;
-  transition: transform 0.1s;
-  -webkit-transition: transform 0.1s;
-	-o-transition: transform 0.1s;
+  color: black;
 }
 
-.find_city .button:active {
+.button {
+  transition: transform 0.1s;
+}
+
+.button:active {
   transform: scale(1.1);
-  -webkit-transform: scale(1.1);
-  -ms-transform: scale(1.1);
 }
 
 @media (max-width: 736px) {
   .root {
     padding:  10px 0;
+  }
+
+  .alert_container {
+    width: 80%;
+    min-height: 200px;
   }
 
   .title {

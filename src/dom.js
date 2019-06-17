@@ -1,6 +1,9 @@
 export default class Dom {
   constructor() {
-    this.loadingDivStyle = document.querySelector('#loading').style;
+    this.preloaderDivStyle = document.querySelector('#preloader').style;
+    this.errorInfoParentDivStyle = document.querySelector('#error_info').style;
+    this.errorInfoTextDiv = document.querySelector('#error_info_text');
+    this.errorInfoOkButton = document.querySelector('#error_info_ok_button');
     this.cityDiv = document.querySelector('#city');
     this.cloudinessDiv = document.querySelector('#cloudiness');
     this.weatherStatusDiv = document.querySelector('#weather_status');
@@ -12,11 +15,19 @@ export default class Dom {
   }
 
   showPreloader() {
-    this.loadingDivStyle.display = 'block';
+    this.preloaderDivStyle.display = 'flex';
   }
 
   hidePreloader() {
-    this.loadingDivStyle.display = 'none';
+    this.preloaderDivStyle.display = 'none';
+  }
+
+  showErrorInfo() {
+    this.errorInfoParentDivStyle.display = 'flex';
+  }
+
+  hideErrorInfo() {
+    this.errorInfoParentDivStyle.display = 'none';
   }
 
   setInfoWeather(obj) {
