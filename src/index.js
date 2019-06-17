@@ -7,7 +7,10 @@ const dom = new Dom();
 const weather = new Weather();
 
 function getWeatherByCity(city) {
-  dom.showPreloader();
+  if (!city) {
+    dom.showPreloader();
+    dom.findCityInput.blur();
+  }
   weather
     .getWeather(city || dom.getCityValueFromInput())
     .then(weatherInfo => {
@@ -28,13 +31,27 @@ function appStart() {
     .then(city => getWeatherByCity(city));
 }
 
+function findNewCity() {
+  if (dom.findCityInput.value !== '') {
+    getWeatherByCity();
+  } else dom.emptyInput();
+}
+
 appStart();
 
 dom.findCityInput.addEventListener('keydown', key => {
   if (key.keyCode === 13) {
-    getWeatherByCity();
+    findNewCity()
   }
 });
 
-dom.findCityButton.addEventListener('click', () => getWeatherByCity());
+window.addEventListener('keydown', key => {
+  if (key.keyCode === 13) {
+    if (dom.errorInfoParentDiv.style.display === 'flex') {
+      dom.hideErrorInfo();
+    }
+  }
+});
+
+dom.findCityButton.addEventListener('click', findNewCity);
 dom.errorInfoOkButton.addEventListener('click', () => dom.hideErrorInfo());
