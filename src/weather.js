@@ -2,7 +2,7 @@
 export default class Weather {
   getWeather(cityName) {
     return fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=12c7488f70bcd015f75b9a10d559d91f`
+      `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=12c7488f70bcd015f75b9a10d559d91f&units=metric`
     )
       .then(response => {
         if (response.status === 200) {
@@ -12,7 +12,7 @@ export default class Weather {
       })
       .then(weather => {
         return {
-          temp: Math.round(weather.main.temp - 273.15),
+          temp: Math.round(weather.main.temp),
           cloudiness: weather.clouds.all,
           weatherStatus: weather.weather[0].description,
           city: weather.name,
