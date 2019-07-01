@@ -1,5 +1,5 @@
 {
-  "name": "Wearher",
+  "name": "Weather",
   "short_name": "Weather",
   "start_url": "/Weather",
   "icons": [
@@ -14,7 +14,7 @@
       "type": "image/png"
     }
   ],
-  "theme_color": "#ADD8E6",
+  "theme_color": "#f5f5f5",
   "background_color": "#3a3a9b",
   "display": "standalone"
 }
