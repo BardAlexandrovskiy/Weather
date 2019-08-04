@@ -17,10 +17,10 @@
 body {
   background-color: lightblue;
   font-size: 0;
+  min-width: 320px;
 }
 
 .root {
-  min-width: 320px;
   padding: 10px 0;
 }
 
@@ -197,7 +197,7 @@ body {
 
 @media (max-width: 736px) {
   .root {
-    padding:  5px 0;
+    padding: 5px 0;
   }
 
   .error_info .alert_container {
