@@ -10,26 +10,27 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/BardAlexandrovskiy/weather.git"
+    "url": "git+https://github.com/BardAlexandrovskiy/Weather.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/BardAlexandrovskiy/weather/issues"
+    "url": "https://github.com/BardAlexandrovskiy/Weather/issues"
   },
-  "homepage": "https://github.com/BardAlexandrovskiy/weather#readme",
+  "homepage": "https://github.com/BardAlexandrovskiy/Weather#readme",
   "dependencies": {
     "parcel-bundler": "^1.12.3"
   },
   "devDependencies": {
+    "cssnano": "^4.1.10",
     "eslint": "^5.16.0",
     "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-prettier": "^4.0.0",
     "eslint-plugin-import": "^2.17.3",
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-react": "^7.13.0",
     "gh-pages": "^2.0.1",
-    "pre-commit": "^1.2.2",
-    "eslint-config-prettier": "^4.0.0"
+    "pre-commit": "^1.2.2"
   },
   "pre-commit": [
     "lint"
