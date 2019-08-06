@@ -2,23 +2,22 @@
   "name": "weather",
   "version": "1.0.0",
   "description": "My weather app.",
-  "main": "index.js",
   "scripts": {
     "lint": "node_modules/.bin/eslint src/*.{js,jsx} --fix",
-    "weather": "parcel ./src/index.html",
+    "start": "parcel ./src/index.html",
     "build": "rm -rf dist && parcel build ./src/index.html --public-url /Weather && cp ./dist/index.html ./dist/404.html",
     "deploy": "gh-pages -d dist"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/BardAlexandrovskiy/Weather.git"
+    "url": "git+https://github.com/BardAlexandrovskiy/weather.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/BardAlexandrovskiy/Weather/issues"
+    "url": "https://github.com/BardAlexandrovskiy/weather/issues"
   },
-  "homepage": "https://github.com/BardAlexandrovskiy/Weather#readme",
+  "homepage": "https://github.com/BardAlexandrovskiy/weather#readme",
   "dependencies": {
     "parcel-bundler": "^1.12.3"
   },
