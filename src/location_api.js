@@ -12,7 +12,7 @@ export default class LocationApi {
   }
 
   getMyLocation(ip) {
-    return fetch(`http://api.sypexgeo.net/json/${ip}`)
+    return fetch(`https://api.sypexgeo.net/json/${ip}`)
       .then(response => {
         if (response.status === 200) {
           return response.json();
