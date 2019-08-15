@@ -15,7 +15,7 @@ function getWeatherByCity(city) {
     .then(weatherInfo => {
       dom.setInfoWeather(weatherInfo);
     })
-    .catch((status) => {
+    .catch(status => {
       dom.errorInfoTextDiv.innerText = status;
       dom.showErrorInfo();
     })
@@ -40,7 +40,7 @@ appStart();
 
 dom.findCityInput.addEventListener('keydown', key => {
   if (key.keyCode === 13) {
-    findNewCity()
+    findNewCity();
   }
 });
 

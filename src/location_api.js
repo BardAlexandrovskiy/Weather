@@ -12,13 +12,13 @@ export default class LocationApi {
   }
 
   getMyLocation(ip) {
-    return fetch(`https://ipapi.co/${ip}/json/`)
+    return fetch(`http://api.sypexgeo.net/json/${ip}`)
       .then(response => {
         if (response.status === 200) {
           return response.json();
         }
         throw new Error(response.status);
       })
-      .then(location => location.city);
+      .then(location => location.city.name_en);
   }
 }
